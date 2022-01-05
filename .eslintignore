@@ -1,0 +1,17 @@
+dist/*.js
+src/assets
+tests/unit/coverage
+public/**/*.js
+utils/*.ts
+index.tsx
+@core
+layouts
+navigation
+NotAuthorized.js
+ThemeColors.js
+Router.js
+stories
+utility
+store.js
+stories
+build

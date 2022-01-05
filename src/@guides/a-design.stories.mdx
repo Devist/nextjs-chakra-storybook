@@ -1,0 +1,245 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+import DesignSystem from './images/design-system.png'
+
+<Meta title="🎨 디자인시스템 / 💈 about" />
+
+# 디자인 시스템
+
+---
+
+- 참조 : [[React] 개발자가 바라본 WEB 디자인 시스템 | Design and Style Guide, Component Library or UI Kit](https://jiguin-hankun.tistory.com/51)
+
+디자인 시스템은 <strong>스타일 가이드(Style Guide)</strong>와 <strong>컴포넌트(Components)의 복합체</strong>이며, 컴포넌트들이 함께 사용 될 때 어떻게 사용되어야 하는지, 디자인을 할 때 어떤 규칙들을 지켜야 하는지에 대한 가이드입니다.
+
+<p className="bg-blue-300 p-2 text-dark text-lg font-extrabold"> Style Guide : </p>
+
+특정 브랜드 또는 프로덕트에서 디자인을 할 때 지켜야 하는 규칙들
+
+- 색상
+- 아이콘
+- 여백 (margin)
+- 패딩 (padding)
+- 타이포그라피 (typography)
+- ...
+
+UI에 있어서는 상당히 추상적인 영역으로 디자인 할 때, 프로젝트의 테마를 만들 때 **전역적**으로 적용되는 부분입니다. 그리고 꼭 UI에만 해당하는 것은 아닙니다. 로고, 굿즈, 문서, 포스터 등에서도 적용 할 수 있습니다.
+
+#### **1. 예시**
+
+- [medium](https://www.behance.net/gallery/7226653/Medium-Brand-Development)
+- [audi](https://www.audi.com/ci/en/intro/basics/colours.html)
+- ```
+  링크 : https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=moolsaess&logNo=221167899209
+
+  필자는 스타일 가이드를 규정하는 조건을 아래와 같이 제시한다.
+
+  1. 사용된 폰트에 대한 정보가 충실하게 담겨 있는가?
+  2. 적용된 칼라에 대한 정보가 빠짐없이 기재되어 있는가?
+  3. 버튼이 전개되는 상황과 롤오버 혹은 탭핑했을때의 값이 정확히 표현되어 있는가?
+  4. 전체 테이블, 면, 간격 등의 수치가 정확하게 기입되어 있는가?
+
+  위 정보가 충실하게 담겨있다면 스타일 가이드라고 규정할 수 있다.
+  ```
+
+#### **2. 적용**
+
+요새는 UI template, tailwindcss, Chakra UI 등에서 폰트, 칼라 팔레트, 간격(margin,padding), container 등을 공통 규격으로 코드로 관리할 수 있도록 도와줍니다.
+숙력된 디자이너가 일관적 스타일을 만들고 그 안에서 디자인 해 준 화면과, 미숙한 디자이너가 스타일 없이 화면마다 제각각인 간격 등으로 디자인한 화면은 개발자에게도 고통입니다.
+가능한 한 기획 전-중-후 단계에서 디자이너와 협업하여 스타일 가이드를 만들어 프로젝트에 적용하고, 개발 기간 동안 그 가이드 기준으로 디자이너와 소통하는 것이 중요합니다.
+
+- 디자이너가 준 스타일 가이드를 프로젝트에 적용하기 예시 (tailwind css)
+
+```javascript
+module.exports = {
+  important: true,
+  // prefix: '',
+  // separator: ':',
+
+  theme: {
+    /*
+    |-----------------------------------------------------------------------------
+    | Colors                                  https://tailwindcss.com/docs/colors
+    |-----------------------------------------------------------------------------
+    |
+    | The color palette defined above is also assigned to the "colors" key of
+    | your Tailwind config. This makes it easy to access them in your CSS
+    | using Tailwind's config helper. For example:
+    |
+    | .error { color: config('colors.red') }
+    |
+    */
+
+    colors: {
+      transparent: 'transparent',
+      primary: '#4c56ff',
+      secondary: '#5FF0A5',
+      success: '#1AC47D',
+      danger: '#EA5455',
+      warning: '#FA9F43',
+      dark: '#1E1E1E',
+      white: '#ffffff',
+      ...colors
+    },
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Screens                      https://tailwindcss.com/docs/responsive-design
+    |-----------------------------------------------------------------------------
+    |
+    | Screens in Tailwind are translated to CSS media queries. They define the
+    | responsive breakpoints for your project. By default Tailwind takes a.
+    | ...
+    |
+    | Class name: .{screen}:{utility}
+    |
+    */
+
+    screens: {
+      sm: '576px',
+      md: '768px',
+      lg: '992px',
+      xl: '1200px'
+    },
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Z-index                                https://tailwindcss.com/docs/z-index
+    |-----------------------------------------------------------------------------
+    |
+    | Here is where you define your z-index utility values. By default we
+    | provide a sensible numeric scale. You can, of course, modify these
+    | values as needed.
+    |
+    | Class name: .z-{index}
+    |
+    */
+
+    zIndex: {
+      auto: 'auto',
+      0: 0,
+      10: 10,
+      20: 20,
+      30: 30
+    },
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Fonts                                    https://tailwindcss.com/docs/fonts
+    |-----------------------------------------------------------------------------
+    |
+    | Here is where you define your project's font stack, or font families.
+    | Keep in mind that Tailwind doesn't actually load any fonts for you.
+    | If you're using custom fonts you'll need to import them prior to
+    | defining them here.
+    | ...
+    |
+    | Class name: .font-{name}
+    |
+    */
+
+    // Set to false in configuration
+    fontFamily: {
+      mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace']
+    },
+
+    /*
+    |-----------------------------------------------------------------------------
+    | Text sizes                         https://tailwindcss.com/docs/text-sizing
+    |-----------------------------------------------------------------------------
+    |
+    | ...
+    | By default Tailwind uses the "rem" unit type for most measurements.
+    | This allows you to set a root font size which all other sizes are
+    | then based on. That said, you are free to use whatever units you
+    | prefer, be it rems, ems, pixels or other.
+    |
+    | Class name: .text-{size}
+    |
+    */
+
+    fontSize: {
+      xs: '.75rem', // 12px
+      sm: '.875rem', // 14px
+      base: '1rem', // 16px
+      lg: '1.125rem', // 18px
+      xl: '1.25rem', // 20px
+    },
+    ...
+  }
+}
+```
+
+<p className="bg-rose-400 p-2 text-white text-lg font-extrabold"> Component Library : </p>
+
+컴포넌트 라이브러리는 "Pattern Library" 라는 이름으로도 불리며, 재사용 가능한 컴포넌트들의 컬렉션으로 이루어져 있습니다.
+
+- Button
+- Modal
+- ToggleSwitch
+- Card
+- Checkbox
+- ...
+
+샘플 >
+
+- [크몽](https://brunch.co.kr/@kmongdev/17)
+
+<br />
+<br />
+
+# 상황 별 디자인 시스템의 적용
+
+## case1. 스타일 가이드 직접, 컴포넌트 직접
+
+## case2. 기존 스타일 가이드 적용, 컴포넌트 직접
+
+## case3. 기존 스타일 가이드 적용, 기존 컴포넌트 적용
+
+- 무료 :
+- 유료 (UI Template) :
+
+<br />
+
+> # "If you don't document it, it doesn't exist"
+
+<img src={DesignSystem} alt="design-system" />
+
+<br />
+
+디자인 시스템에 대한 정의는 회사마다, 개인마다 다들 조금씩 다른 견해를 가질 수 있습니다. <strong> 하지만 공통점이 있습니다. </strong>
+
+- 디자인 시스템이란, 디자인과 개발의 생산성을 높여주기 위한 문서화된 가이드 입니다.
+
+<br />
+<br />
+
+## **가장 중요한 것은 문서화 입니다.**
+
+제대로 문서화가 되어있지 않으면 시스템을 사용 할수 없습니다.
+
+아무리, 재사용이 쉬운 컴포넌트를 만들거나 코드 상에 주석을 작성해도,
+
+### 문서화가 되어있지 않다면 그것은 디자인 시스템이라고 부를 수 없는 것입니다.
+
+<br />
+<br />
+
+## storybook은 이 작업을 쉽게 하기 위하여 사용하는 도구이며 협업의 채널입니다. (개발자 - 디자이너가 함께 사용합니다).
+
+예를 들면, 다음과 같은 프로세스가 있습니다.
+
+- step1. 디자이너) 스타일 가이드를 제작합니다.
+- step2.
+  - 디자이너) 스타일 가이드를 기반으로 제플린, adobe XD 등에 컴포넌트, 페이지를 제작합니다.
+  - 개발자) 스타일 가이드를 프로젝트의 theme 시스템으로 적용합니다.
+- step3.
+  - 개발자) 디자이너가 제작한 컴포넌트를, 코드로 작성하여 스토리북에 문서화 합니다.
+  - 기획자-디자이너) 스토리북을 통해 컴포넌트를 점검합니다.
+- step4.
+  - 다른 개발자들은 스토리북을 통해, 컴포넌트 기반의 개발을 합니다.
+  - 스토리북으로 목업을 잘 활용하면, 최종 산출물에 대한 검증(E2E 테스트)도 가능합니다.
+
+```
+
+```

@@ -1,0 +1,263 @@
+import { Meta } from '@storybook/addon-docs'
+import Code from './assets/code-brackets.svg'
+import Colors from './assets/colors.svg'
+import Comments from './assets/comments.svg'
+import Direction from './assets/direction.svg'
+import Flow from './assets/flow.svg'
+import Plugin from './assets/plugin.svg'
+import Repo from './assets/repo.svg'
+import StackAlt from './assets/stackalt.svg'
+
+<Meta title="🎉  안녕하세요!" />
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 6px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+  .link-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+  }
+
+  @media (min-width: 620px) {
+    .link-list {
+      row-gap: 20px;
+      column-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media all and (-ms-high-contrast:none) {
+  .link-list {
+      display: -ms-grid;
+      -ms-grid-columns: 1fr 1fr;
+      -ms-grid-rows: 1fr 1fr;
+    }
+  }
+
+  .link-item {
+    display: block;
+    padding: 20px 30px 20px 15px;
+    border: 1px solid #00000010;
+    border-radius: 5px;
+    transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+    color: #333333;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .link-item:hover {
+    border-color: #1EA7FD50;
+    transform: translate3d(0, -3px, 0);
+    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+  }
+
+  .link-item:active {
+    border-color: #1EA7FD;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .link-item strong {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+  
+  .link-item img {
+    height: 40px;
+    width: 40px;
+    margin-right: 15px;
+    flex: none;
+  }
+
+  .link-item span {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .tip {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .tip-wrapper {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tip-wrapper code {
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  
+`}</style>
+
+# 안녕하세요!
+
+<br />
+
+### 해당 프로젝트는 React + Mobx + Typescript + tailwindCSS + Cypress로 구성되어 있습니다.
+
+- 언어 : Typescript
+- 구현 :
+  - 아키텍쳐 : Clean Architecture
+  - UI 구현 : React(with Atomic design)
+- 저장소 : Mobx
+- 마크업 : TailwindCSS
+- 가이드 : Storybook
+- 단위 테스트 : jest
+- E2E 테스트 : cypress
+
+<br />
+
+## 다음의 경우 해당 프로젝트를 사용합니다.
+
+- SEO가 필요하지 않은 경우 (ex: 임직원 대상 내부 서비스)
+- 웹 서버 부담을 줄이고자 하는 경우
+- 별도 퍼블리셔가 있는 경우 (퍼블리셔 대상으로 tailwindcss 교육 필요)
+
+<br />
+
+## **구조나 사용 기술을 마음껏 변형해서 사용합니다.**
+
+더 나은 구조, 더 나은 코드, 더 나은 기술에 대한 아이디어가 있다면, 언제든 변형하여 사용하셔도 됩니다. 다음의 경우 알려주시거나 요청하시면, 지원하거나 해당 프로젝트를 업그레이드 하겠습니다.
+
+- 좀 더 나은 레이아웃 구조 필요(ex. 넓은화면에선 사이드바가 표시되고, 모바일 화면에서는 메뉴 아이콘으로 대체되도록 동작하는 레이아웃)
+- 모듈의 버전업( ex. axio, react-router-dom 등)
+- store를 직접 접근하는 구조로 변경
+
+<br />
+
+## **스토리북 메뉴 소개**
+
+해당 스토리북은 필요한 순서, 또는 연계되는 순서, 개발 순서대로 문서가 기록되어 있습니다.
+
+개발 가이드이건 디자인 시스템이건, 전체를 알고싶으신 경우 사이드바의 맨 위부터 맨 아래 방향으로 읽어가시면 수월할 수 있습니다.
+
+<p className="bg-blue-300 p-2 text-dark text-lg "> > 개발 가이드 : </p>
+개발 전 과정에 대해 안내합니다.
+
+- 설치 ~ 개발 환경 세팅
+- 프로젝트의 구조에 대한 이해와 학습
+- 개발 프로세스 (코드스타일, 구조 내 개발 방안, 컴포넌트 설계 등)
+
+이 프로젝트에서는 개발 중 매번 참조할 수 있도록 스토리북에 포함시켰지만, ** 스토리북을 사용하되 개발 가이드는 별도로 confluence 등에 문서화할 예정인 경우 `src/@guides` 폴더를 삭제하면 됩니다. **
+
+<p className="bg-rose-400 p-2 text-white text-lg font-bold"> > 디자인 시스템 : </p>
+실제로 스토리북에 있어야 할, 디자인시스템에 대한 안내와 예시를 제공합니다.
+
+- @core 컴포넌트와 @project 컴포넌트를 `개발가이드 / 컴포넌트 설계 ` 를 참조하여 잘 나눌 경우, 여러 프로젝트에서 사용할 수 있는 UI Template을 완성할 수 있습니다. (단, 현재 프로젝트의 컴포넌트 자체의 코드나 방식은 좋은 형태가 아닐 수 있습니다.)
+- 사용할 프로젝트에서만 사용할 예정인 디자인인 경우, 굳이 @core를 별도로 두지 않아도 됩니다.
+
+<!-- # 리액트 스터디 모임 문서에 오신 것을 환영합니다!
+
+Storybook helps you build UI components in isolation from your app's business logic, data, and context.
+That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+
+Browse example stories now by navigating to them in the sidebar.
+View their code in the `src/stories` directory to learn how they work.
+We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+
+<div className="subheading">About group members</div>
+
+<div className="link-list">
+  <div
+    className="link-item"
+    target="_blank">
+    <img
+      src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F4108ce4a-262f-4c17-8b0a-888da064d8a0%2F32079_103150999731028_6007019_n.jpg?width=60&userId=2c43b81f-98d9-41d7-b34b-860a6315053a&cache=v2"
+      alt="plugin"
+    />
+    <span>
+      <strong>황성철</strong>웹 개발 팀의 수장! 많은 미팅에도 불구하고 스터디를 통해 팀원들의 업무를
+      이해하려는 노력과 동시에 본인의 바쁜 일정이 스터디에 방해가 되지 않도록 배려할 줄 아는
+      팀장입니다.
+    </span>
+  </div>
+  <div
+    className="link-item"
+    target="_blank">
+    <img src="https://www.notion.so/image/https%3A%2F%2Flh5.googleusercontent.com%2F-K2geOGBj6fQ%2FAAAAAAAAAAI%2FAAAAAAAAADw%2F66VvH1D57zo%2Fphoto.jpg?width=60&userId=2c43b81f-98d9-41d7-b34b-860a6315053a&cache=v2" alt="Build" />
+    <span>
+      <strong>육선도</strong>웹 개발 팀의 미남! 작은 감기가 혹시 아이들에게 위험할 수 있는
+      코로나일까 염려하여 집안에서도 마스크를 쓰며,
+    </span>
+  </div>
+  <div
+    className="link-item"
+    target="_blank">
+    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2Fc8101b30-babf-4bdd-a1f6-64ae6820b78f%2FKakaoTalk_20210626_194440361.jpg?width=60&userId=2c43b81f-98d9-41d7-b34b-860a6315053a&cache=v2" alt="colors" />
+    <span>
+      <strong>최경선</strong>웹 개발 팀의 미녀! 무지막지한 공부량
+    </span>
+
+  </div>
+  <div
+    className="link-item"
+    target="_blank">
+    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F6671b6f0-23ad-4b54-bc59-c72f2256f611%2F35bfdb013e6b595bfb54a98f9eb7b528-sticker.png?width=60&userId=2c43b81f-98d9-41d7-b34b-860a6315053a&cache=v2" alt="flow" />
+    <span>
+      <strong>오동환</strong>웹 개발 탐의
+    </span>
+  </div>
+</div>
+
+<div className="subheading">Learn</div>
+
+<div className="link-list">
+  <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
+    <img src={Repo} alt="repo" />
+    <span>
+      <strong>Storybook documentation</strong>
+      Configure, customize, and extend
+    </span>
+  </a>
+  <a className="link-item" href="https://storybook.js.org/tutorials/" target="_blank">
+    <img src={Direction} alt="direction" />
+    <span>
+      <strong>In-depth guides</strong>
+      Best practices from leading teams
+    </span>
+  </a>
+  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
+    <img src={Code} alt="code" />
+    <span>
+      <strong>GitHub project</strong>
+      View the source and add issues
+    </span>
+  </a>
+  <a className="link-item" href="https://discord.gg/storybook" target="_blank">
+    <img src={Comments} alt="comments" />
+    <span>
+      <strong>Discord chat</strong>
+      Chat with maintainers and the community
+    </span>
+  </a>
+</div>
+
+<div className="tip-wrapper">
+  <span className="tip">Tip</span>Edit the Markdown in{' '}
+  <code>src/stories/Introduction.stories.mdx</code>
+</div> -->

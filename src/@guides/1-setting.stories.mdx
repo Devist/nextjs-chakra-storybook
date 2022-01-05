@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="⛷ 개발가이드 /🎛 세팅 및 실행 스크립트" />
+
+# 🎛 세팅 및 실행 스크립트
+
+---
+
+<br />
+<br />
+
+## A. VS Code 에서 해당 프로젝트 폴더 열기
+
+<br />
+<br />
+
+## B. 사용 가능한 스크립트
+
+해당 스크립트는 로컬에서 실행할 수도 있지만, 배포를 위해서는 빌드 서버에서도 실행될 수 있습니다.
+
+### **`yarn start`**
+
+개발 모드에서 앱과 스토리북을 실행합니다.
+
+앱을 보려면, `http://localhost:3000` 을 엽니다. (맥에서만 5015 포트로 열도록 되어 있습니다.)
+
+스토리북을 보려면, `http://localhost:6007/` 을 엽니다.
+
+콘솔에서는 lint 오류가 표시됩니다.
+
+### **`yarn test`**
+
+대화형 watch 모드에서 테스트 러너를 시작합니다.
+
+이 프로젝트에서는 단위테스트, 그것도 핵심 비즈니스 로직까지의 단위 테스트를 목표로 하고 있습니다.
+
+### **`yarn build`**
+
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
+
+See the section about deployment for more information.
