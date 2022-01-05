@@ -1,3 +1,5 @@
+import type { AppProps as NextAppProps } from 'next/app'
+
 import { ChakraProvider } from '@chakra-ui/react'
 import '@core/styles/globals.css'
 import theme from '@core/theme'
@@ -6,7 +8,6 @@ import '@fontsource/inter/400.css'
 import '@fontsource/inter/500.css'
 import '@fontsource/inter/600.css'
 import '@fontsource/inter/700.css'
-
 import '@core/styles/skeleton.css'
 
 import { LAYOUT_TYPE } from '@/@types/LayoutType'
@@ -20,7 +21,11 @@ const layouts = {
   [LAYOUT_TYPE.SAMPLE]: SampleLayout
 }
 
-function App({ Component, pageProps }) {
+type AppProps<P = any> = {
+  Component: P
+} & Omit<NextAppProps<P>, 'Component'>
+
+function App({ Component, pageProps }: AppProps) {
   const Layout = layouts[Component.layout] || ((children) => <>{children}</>)
 
   return (

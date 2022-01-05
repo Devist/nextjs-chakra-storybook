@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
 import { observer } from 'mobx-react'
 import PostDetailTemplate from '@components/templates/PostDetailTemplate'
@@ -11,8 +11,8 @@ import { LAYOUT_TYPE } from '@/@types/LayoutType'
 function PostDetail() {
   const [loading, setLoading] = useState<boolean>(true)
   const { userStore, postStore } = useStores()
-  const router = useRouter()
-  const { id } = router.query
+  // const router = useRouter()
+  // const { id } = router.query
 
   const postsService = new PostsService()
 
